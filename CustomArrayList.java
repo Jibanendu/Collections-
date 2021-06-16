@@ -25,6 +25,13 @@ public class CustomArrayList {
 		String cleanedArray[] = Arrays.stream(str).filter(Objects::nonNull).toArray(String[]::new);
 		return cleanedArray; 
 	}
+
+        
+	private static String findElement(String[] strArr, String value)
+	{
+		List<String> resultArr = Arrays.stream(strArr).filter(x->value.equals(x)).collect(Collectors.toList());
+		return resultArr.toString();
+	}
 	
 	private static void CustomAdd(CustomArrayList c, String string) {
         int lastElementValue=0;
@@ -92,6 +99,8 @@ public class CustomArrayList {
 		System.out.println(c.str.length);
 		System.out.println(customLength(c.str));
 		System.out.println(Arrays.toString(customArrayString(c.str)));
+
+                System.out.println(findElement(c.str,"dummy"));
 	
 	}
 
