@@ -79,6 +79,21 @@ public class CustomArrayList {
 	    
 		
 	}
+
+      public static String [] removeElement(String[] strArr, int deletedIndex)
+	{
+		
+		for(int i=deletedIndex;i<strArr.length;i++)
+		{
+			int j = i+1;
+			if(j<strArr.length)
+			{
+			strArr[i] = strArr[i+1];
+			}
+		}
+		return strArr; 
+	}
+	
 	
 	public static void main(String[] args) {
 		
@@ -98,6 +113,9 @@ public class CustomArrayList {
 		System.out.println(arrLength);
 		System.out.println(c.str.length);
 		System.out.println(customLength(c.str));
+		System.out.println(Arrays.toString(customArrayString(c.str)));
+                
+                removeElement(c.str,3);
 		System.out.println(Arrays.toString(customArrayString(c.str)));
 
                 System.out.println(findElement(c.str,"dummy"));
